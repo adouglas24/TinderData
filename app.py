@@ -32,8 +32,8 @@ def dataPage():
                 dislikes += int(data["Usage"]["swipes_passes"][i])
             for i in data["Usage"]["matches"]:
                 matches += int(data["Usage"]["matches"][i])
-    img = sankey(likes, dislikes, matches)
-    return render_template("data.html")
+    sankey(likes, dislikes, matches)
+    return ""
 
 
 def badFile(data):
@@ -67,4 +67,4 @@ def sankey(likes, dislikes, matches):
         font_color = 'white',
         paper_bgcolor = '#FCF7F8')
     
-    fig.write_html('templates/data.html')
+    fig.show()
